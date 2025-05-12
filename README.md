@@ -5,19 +5,6 @@ A fully containerized microservices-based healthcare platform with modular servi
 
 ---
 
-## Table of Contents
-
-- [Features](#features)
-- [Tech Stack](#tech-stack)
-- [Architecture Overview](#architecture-overview)
-- [Key Concepts](#key-concepts)
-- [Project Structure](#project-structure)
-- [How to Run Locally](#how-to-run-locally)
-- [Testing](#testing)
-- [Infrastructure as Code & Cloud Deployment](#infrastructure-as-code--cloud-deployment)
-
----
-
 ## Features
 
 - Full-stack microservice communication using REST, gRPC, and Kafka  
@@ -44,43 +31,30 @@ A fully containerized microservices-based healthcare platform with modular servi
 ## 🧱 Architecture Overview
 
 ### 📌 Local Deployment Architecture  
-![Local Architecture](./assets/local-architecture.png)
+![Local Architecture](https://github.com/Reneechang17/CloudCare/blob/main/statics/Final%20Archi.jpg)
 
 ### ☁️ Cloud Deployment on AWS  
-![Cloud Architecture](./assets/cloud-architecture.png)
+![Cloud Architecture](https://github.com/Reneechang17/CloudCare/blob/main/statics/Final%20Archi-Cloud.jpg)
 
 ### 🔀 Internal Spring Boot Architecture  
-![Spring Boot](./assets/spring-boot-arch.png)
+![Spring Boot](https://github.com/Reneechang17/CloudCare/blob/main/statics/SpringBoot%20Archi.jpg)
 
 ### 🔗 gRPC Flow  
-![gRPC Architecture](./assets/grpc-arch.png)
+![gRPC Architecture](https://github.com/Reneechang17/CloudCare/blob/main/statics/gRPC%20Archi.jpg)
 
 ### 🔊 Kafka Streaming Overview  
-![Kafka Intro](./assets/kafka-intro.png)  
-![Kafka Flow](./assets/kafka-arch.png)
+![Kafka Intro](https://github.com/Reneechang17/CloudCare/blob/main/statics/Kafka%20Intro.jpg)  
+![Kafka Flow](https://github.com/Reneechang17/CloudCare/blob/main/statics/Kafka%20Archi.jpg)
 
 ### 🔐 Authentication Flow  
-![Auth Architecture](./assets/auth-arch.png)
+![Auth Architecture](https://github.com/Reneechang17/CloudCare/blob/main/statics/Auth%20Archi.jpg)
 
 ### 🧵 API Gateway Routing  
-![API Gateway](./assets/api-gateway-arch.png)
+![API Gateway](https://github.com/Reneechang17/CloudCare/blob/main/statics/API%20Gateway%20Archi.jpg)
 
 ---
 
-## 💡 Key Concepts
-
-### Why Use DTOs?  
-![DTOs](./assets/why-use-dtos.png)
-
-### What Is an API Gateway?  
-![API Gateway Intro](./assets/intro-api-gateway.png)
-
-### Types of Testing  
-![Testing Types](./assets/testing-overview.png)
-
----
-
-## 🧱 Project Structure
+## Project Structure
 
 ```
 patient-management/
@@ -96,7 +70,7 @@ patient-management/
 
 ---
 
-## 🚀 How to Run Locally
+## How to Run Locally
 
 ### Prerequisites
 
@@ -115,12 +89,9 @@ $ cd infrastructure
 $ ./localstack-deploy.sh
 ```
 
-✅ Deployment confirmation:  
-![Stack Deploy](./assets/test-stack-created.png)
-
 ---
 
-## 🔐 Auth & API Testing
+## Auth & API Testing
 
 ### 1. Login Request
 
@@ -135,7 +106,7 @@ Content-Type: application/json
 ```
 
 ✅ Response:  
-![JWT Token](./assets/test-jwt-login.png)
+![Login](https://github.com/Reneechang17/CloudCare/blob/main/statics/login%20test.jpg)
 
 ---
 
@@ -147,7 +118,7 @@ Authorization: Bearer <token>
 ```
 
 ✅ Response:  
-![Get Patients](./assets/test-get-patient.png)
+![Get Patients](https://github.com/Reneechang17/CloudCare/blob/main/statics/get-patients.jpg)
 
 ---
 
@@ -167,16 +138,16 @@ Content-Type: application/json
 }
 ```
 
-✅ Kafka test verified:  
-![Kafka Test](./assets/test-kafka-result.png)
+✅ Verified:  
+![Create Patient](https://github.com/Reneechang17/CloudCare/blob/main/statics/create-patient.jpg)
 
 ---
 
-## 🏗️ Infrastructure as Code & Cloud Deployment
+## Infrastructure as Code & Cloud Deployment
 
 Our infrastructure is defined and deployed using AWS CloudFormation templates, written via the AWS CDK (Cloud Development Kit) in Java. To avoid unnecessary costs during development, we use **LocalStack** to simulate the AWS environment locally.
 
-### 🧱 What’s Included in the Stack
+### What’s Included in the Stack
 
 - **VPC** – A private, isolated network for the services  
 - **RDS** – PostgreSQL databases for Auth and Patient services  
@@ -184,7 +155,7 @@ Our infrastructure is defined and deployed using AWS CloudFormation templates, w
 - **ECS Cluster** – Hosts all containerized microservices  
 - **Application Load Balancer (ALB)** – For routing traffic from frontend to the gateway  
 
-### 🚀 Deployment Steps with LocalStack
+### Deployment Steps with LocalStack
 
 1. Ensure Docker and LocalStack are running  
 2. From the `infrastructure/` directory, run:
@@ -204,9 +175,4 @@ lb-XXXX.elb.localhost.localstack.cloud
 ```
 
 ✅ Successful output looks like this:  
-![Stack Deploy](./assets/test-stack-created.png)
-
-### 🌐 Visual Confirmation in LocalStack Console  
-![LocalStack UI](./assets/test-stack-console.png)
-
----
+![Stack Deploy](https://github.com/Reneechang17/CloudCare/blob/main/statics/localstack%20snapshot.jpg)
